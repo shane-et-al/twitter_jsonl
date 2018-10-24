@@ -6,7 +6,9 @@ import os
 fields = ["created_at", "id", "full_text", "in_reply_to_user_id", "user__id", "user__name", "user__screen_name", "user__location", "user__description", "user__followers_count", "user__friends_count", "user__created_at", "user__favourites_count", "user__utc_offset",
           "user__time_zone", "user__geo_enabled", "user__verified", "user__statuses_count", "user__lang", "user__is_translator", "user__is_translation_enabled", "user__translator_type", "geo", "coordinates", "place", "retweet_count", "favorite_count", "lang"]
 
-filenames = [f for f in os.listdir('.') if os.path.isfile(f)]
+filenames = [input("Enter filename: ")]
+if filenames[0]=="":
+    filenames = [f for f in os.listdir('.') if os.path.isfile(f)]
 for filename in filenames:
     if filename[-5:] != "jsonl":
         continue
